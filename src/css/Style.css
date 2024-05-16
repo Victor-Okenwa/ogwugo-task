@@ -1,0 +1,477 @@
+@font-face {
+  font-family: Poppins;
+  src: url(../assets/fonts/Poppins/Poppins-Regular.ttf);
+}
+* {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 20px;
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+  overflow-x: hidden;
+}
+html body {
+  display: flex;
+  flex-direction: column;
+  font-family: "Poppins", sans-serif;
+  background: #f5f5fa;
+  width: 100%;
+}
+html body #root {
+  flex-grow: 1;
+  display: flex;
+}
+html body .App {
+  height: 100%;
+  width: 100%;
+  flex-grow: 1;
+}
+html li {
+  list-style: none;
+}
+html .btn {
+  display: inline-block;
+  font-weight: 400;
+  color: var(--white);
+  text-align: center;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border: 1px solid transparent;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: 0.25rem;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+html .btn.focus, html .btn:active {
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+html .btn.disabled, html .btn:disabled {
+  opacity: 0.65;
+}
+html .btn:not(:disabled):not(.disabled) {
+  cursor: pointer;
+}
+html .order-btn {
+  border: 2px solid;
+  @apply border-red-600 capitalize text-red-600 font-bold;
+}
+html .order-btn:hover {
+  @apply bg-red-600 capitalize text-white;
+}
+html .card {
+  position: relative;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+}
+html section {
+  @apply px-4 md:px-8 lg:px-16;
+}
+html nav,
+html main,
+html footer {
+  width: 100%;
+}
+html nav {
+  background: #ffeedb;
+  position: sticky;
+  top: 0;
+  z-index: 25;
+}
+html nav .navbar {
+  @apply px-4 md:px-8 lg:px-16;
+  display: flex;
+  height: 70px;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+html nav .navbar .logo img {
+  position: relative;
+  left: 0px;
+  padding: 0 !important;
+  height: 30px;
+  width: auto;
+}
+html nav .navbar .toggler {
+  @apply ml-auto hidden;
+}
+html nav .navbar .links {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: "";
+  width: 80%;
+}
+html nav .navbar .links .nav-links {
+  @apply flex gap-4;
+}
+html nav .navbar .links .nav-links .nav-link {
+  height: 100%;
+}
+html nav .navbar .links .nav-links .nav-link a {
+  @apply flex gap-1 h-full relative;
+}
+html nav .navbar .links .nav-links .nav-link a::after {
+  transition: 0.3s ease;
+  content: "";
+  @apply block absolute w-0 bg-red-700 h-0.5 bottom-0 top-full;
+}
+html nav .navbar .links .nav-links .nav-link a svg {
+  @apply text-red-700;
+}
+html nav .navbar .links .nav-links .nav-link a span {
+  @apply capitalize;
+}
+html nav .navbar .links .nav-links .nav-link a:hover::after {
+  @apply w-full;
+}
+html nav .navbar .links .buttons {
+  @apply flex capitalize;
+}
+html nav .navbar .links .buttons button {
+  @apply capitalize;
+}
+html nav .navbar .links .buttons button.signup {
+  @apply bg-red-800 text-white;
+}
+html main {
+  display: flex;
+  flex-direction: column;
+  gap: 10em;
+  margin-bottom: 7em;
+}
+html main header {
+  background: #ffeedb;
+  height: 100%;
+  min-height: 100vh;
+  max-height: 130vh;
+  width: 100%;
+}
+html main header section {
+  @apply flex w-full justify-between;
+}
+html main header section .head-info {
+  @apply flex flex-col py-8;
+}
+html main header section .head-info h1 {
+  word-spacing: 10px;
+  letter-spacing: 5px;
+  @apply text-6xl w-80 max-sm:text-4xl max-md:w-full font-extrabold break-words;
+}
+html main header section .head-info h1 span {
+  @apply text-red-700;
+}
+html main header section .head-info p {
+  @apply mt-16 mb-5;
+}
+html main header section .images {
+  @apply h-full relative max-md:hidden;
+}
+html main header section .images .first {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  z-index: 3;
+}
+html main header section .images .last {
+  position: absolute;
+  top: 50%;
+  right: 55%;
+}
+html main .join section {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+}
+html main .join section .section-heading {
+  @apply text-center;
+}
+html main .join section .section-heading h2 {
+  @apply text-3xl max-sm:text-2xl;
+}
+html main .join section .section-body .cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: 30px;
+  align-items: center;
+  justify-content: center;
+  grid-template-rows: max-content;
+}
+html main .join section .section-body .cards .card {
+  @apply flex flex-col justify-between px-6 py-10 gap-8;
+}
+html main .join section .section-body .cards .card .card-icon {
+  margin: auto;
+  height: 100px;
+  @apply flex;
+  background: #ffeedb;
+  border-radius: 0.5em;
+}
+html main .join section .section-body .cards .card .card-icon svg {
+  @apply text-4xl px-6 m-auto;
+}
+html main .join section .section-body .cards .card .card-text b {
+  @apply text-2xl;
+}
+html main .relax {
+  background: linear-gradient(0.4turn, #ffeedb 50%, #830202 1%);
+}
+html main .relax section {
+  display: flex;
+  flex-direction: column;
+  gap: 4em;
+  padding-block: 5em;
+}
+html main .relax section .section-heading {
+  @apply text-center;
+}
+html main .relax section .section-heading h2 {
+  @apply text-3xl max-sm:text-2xl;
+}
+html main .relax section .section-body {
+  display: flex;
+  flex-direction: column;
+  gap: 5em;
+}
+html main .relax section .section-body > div {
+  @apply flex justify-between align-text-bottom flex-wrap max-md:flex-col;
+}
+html main .relax section .section-body > div > div {
+  @apply flex-1;
+}
+html main .relax section .section-body > div > div.text {
+  @apply flex flex-col gap-8 mx-auto;
+}
+html main .relax section .section-body > div > div.text h3 {
+  @apply text-red-600 font-bold mb-4 text-xl;
+}
+html main .relax section .section-body > div > div.text p {
+  @apply pl-4;
+}
+html main .relax section .section-body > div.last .text h3 {
+  color: #ddd;
+}
+html main .relax section .section-body > div.last .text p {
+  color: #ffeedb;
+}
+html main .restaurants section {
+  display: flex;
+  flex-direction: column;
+  gap: 4em;
+  padding-block: 5em;
+}
+html main .restaurants section .section-heading {
+  @apply text-center;
+}
+html main .restaurants section .section-heading h2 {
+  @apply text-3xl max-sm:text-2xl;
+}
+html main .restaurants section .section-heading p {
+  @apply text-red-700;
+}
+html main .restaurants section .section-body {
+  display: flex;
+  flex-direction: column;
+  gap: 5em;
+}
+html main .restaurants section .section-body .cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-gap: 40px;
+  align-items: center;
+  justify-content: center;
+  grid-template-rows: max-content;
+}
+html main .restaurants section .section-body .cards .card {
+  @apply flex flex-col rounded-md shadow-md;
+}
+html main .restaurants section .section-body .cards .card .card-image {
+  width: 100%;
+  height: 400px;
+}
+html main .restaurants section .section-body .cards .card .card-image img {
+  @apply w-full h-full object-cover;
+}
+html main .restaurants section .section-body .cards .card .card-body {
+  @apply py-4 px-3;
+}
+html main .restaurants section .section-body .cards .card .card-body h3 {
+  @apply font-bold text-lg;
+}
+html main .restaurants section .section-body .cards .card .card-body .buttons {
+  @apply flex flex-wrap align-middle justify-between;
+}
+html main .restaurants section .section-body .cards .card .card-body .buttons button {
+  flex: 1;
+  max-width: fit-content;
+}
+html main .restaurants section .section-body .cards .card .card-body .buttons button.view-btn {
+  background: #f5f5fa;
+  @apply capitalize shadow-md;
+}
+html main .restaurants section .section-body .cards .card .card-body .buttons button.view-btn:hover {
+  @apply bg-slate-300;
+}
+html main .earn {
+  background: linear-gradient(0.4turn, #830202 50%, #ffeedb 0%);
+}
+html main .earn section {
+  display: flex;
+  flex-direction: column;
+  gap: 4em;
+  padding-block: 5em;
+}
+html main .earn section .section-heading {
+  @apply text-center;
+}
+html main .earn section .section-heading h2 {
+  @apply text-3xl max-sm:text-2xl;
+}
+html main .earn section .section-body {
+  display: flex;
+  flex-direction: column;
+  gap: 5em;
+}
+html main .earn section .section-body > div {
+  @apply flex justify-between align-text-bottom flex-wrap max-md:flex-col;
+}
+html main .earn section .section-body > div > div {
+  @apply flex-1;
+}
+html main .earn section .section-body > div > div.text {
+  @apply flex flex-col gap-8 mx-auto;
+}
+html main .earn section .section-body > div > div.text h3 {
+  @apply text-white text-2xl;
+}
+html main .earn section .section-body > div > div.text h4 {
+  @apply text-gray-300;
+}
+html main .earn section .section-body > div > div.text p {
+  color: #ffeedb;
+}
+html main .earn section .section-body > div > div.text button.join {
+  @apply bg-white font-semibold hover:bg-gray-100;
+}
+html main .earn section .section-body > div.last .text h3 {
+  color: #ddd;
+}
+html main .earn section .section-body > div.last .text h3 {
+  @apply text-red-600 font-bold mb-4 text-xl;
+}
+html main .earn section .section-body > div.last .text p {
+  @apply pl-4 text-black;
+}
+html main .earn section .section-body > div.last .text .get-app {
+  @apply rounded-xl mt-6;
+}
+html main .slider {
+  @apply py-6;
+}
+html main .slider .owl-theme .owl-stage-outer .owl-stage {
+  @apply flex;
+}
+html main .slider .owl-theme .owl-stage-outer .owl-stage .owl-item .card {
+  @apply flex flex-col gap-4 py-6 px-6;
+}
+html main .slider .owl-theme .owl-stage-outer .owl-stage .owl-item .card .card-header svg {
+  @apply text-red-700 text-2xl;
+}
+html main .slider .owl-theme .owl-nav {
+  position: absolute;
+  top: -25%;
+  right: 5%;
+}
+html main .slider .owl-theme .owl-nav .owl-prev span,
+html main .slider .owl-theme .owl-nav .owl-next span {
+  @apply py-2 px-4 bg-transparent border border-red-600 rounded-full hover:bg-red-600 cursor-pointer text-xl outline-none shadow-none;
+}
+html footer {
+  @apply bg-white py-6;
+}
+html footer section {
+  @apply flex flex-wrap;
+}
+html footer section > div {
+  @apply flex flex-col m-auto;
+}
+html footer section > div h3 {
+  @apply font-bold text-xl mb-3;
+}
+html footer section > div > div {
+  @apply flex flex-col gap-2;
+}
+html footer section > div.first {
+  min-width: 100%;
+}
+html footer section > div.first .logo-info {
+  width: 70%;
+  max-width: 100%;
+}
+html footer section > div.first .logo-info img {
+  width: 135px;
+  height: 65px;
+  margin-bottom: 0.5em;
+}
+html footer section > div.first .logo-info p {
+  margin-bottom: 0.5em;
+}
+html footer section > div.first .handles {
+  @apply flex flex-row gap-4;
+}
+html footer section > div.first .handles a {
+  @apply py-2 px-3 bg-slate-900 text-white rounded-full hover:bg-slate-700;
+}
+
+@media only all and (max-width: 1180px) {
+  .links .nav-links svg {
+    display: none;
+  }
+}
+@media only all and (max-width: 768px) {
+  .toggler {
+    display: block !important;
+  }
+  .links {
+    @apply flex-col absolute top-full left-0 gap-5 px-4 sm:px-6 py-2;
+    width: 300px !important;
+    align-items: flex-start !important;
+    background: #ffeedb;
+    transform: translate(-180%);
+    transition: transform 0.5s ease;
+    max-height: 100vh;
+    overflow-y: auto;
+  }
+  .links.show {
+    transform: translate(0%);
+  }
+  .links .nav-links {
+    @apply flex-col align-middle justify-center;
+  }
+  .links .nav-links .nav-link {
+    @apply flex justify-between py-2;
+  }
+  .links .nav-links .nav-link a {
+    @apply w-full;
+  }
+  .links .nav-links .nav-link a svg {
+    display: initial;
+  }
+}

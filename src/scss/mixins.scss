@@ -1,0 +1,12 @@
+// Universal mixins an functions
+@mixin flexCol {
+    display: flex;
+    flex-direction: column;
+}
+
+@mixin flexBoxLayout($align, $justify, $direction) {
+    display: flex;
+    align-items: $align;
+    justify-content: $justify;
+    flex-direction: $direction;
+}
